@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"encoding/csv"
 	"flag"
 	"fmt"
@@ -47,6 +48,8 @@ func main() {
 	}
 
 	fmt.Printf("You correctly answered %d out of %d problems.\n", correctProblemsCount, len(problems))
+	stdInputReader := bufio.NewReader(os.Stdin)
+	stdInputReader.ReadString('\n')
 }
 
 // Function to parse slices of slice of math problem from the read csv file
